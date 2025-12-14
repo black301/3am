@@ -58,7 +58,7 @@ export async function POST(req: Request) {
       }
     }
 
-    return NextResponse.json({ stdout, stderr });
+    return NextResponse.json({ output: stdout + "\n" + stderr });
   } catch (err: any) {
     return NextResponse.json({ error: String(err) }, { status: 500 });
   }
